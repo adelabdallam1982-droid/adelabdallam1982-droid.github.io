@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلة العمرة</title>
+    <title>رحلات العمرة</title>
+
+    <script>
+        const path = window.location.pathname;
+
+        if (path.startsWith("/trip/")) {
+            const slug = path.substring("/trip/".length);
+
+            if (slug) {
+                const appUrl =
+                    "https://adelabdallam1982-droid.github.io/trip/" + slug;
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("tripSlug").textContent = slug;
+                });
+            }
+        }
+    </script>
 </head>
+
 <body>
     <h1>رحلة العمرة</h1>
-    <p>جاري فتح الرحلة من خلال تطبيق رحلات العمرة...</p>
+
+    <p>
+        جاري فتح الرحلة من خلال تطبيق رحلات العمرة...
+    </p>
+
+    <p>
+        رقم الرحلة:
+        <strong id="tripSlug"></strong>
+    </p>
 </body>
 </html>
