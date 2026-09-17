@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aistudio.umrahtrips.vpwq",
+      "sha256_cert_fingerprints": [
+        "57:09:66:97:06:04:F2:99:83:67:F0:15:78:7E:D0:F0:89:9F:1C:74:D2:D9:EF:BB:D7:85:EB:54:B9:AA:23:81"
+      ]
+    }
+  }
+]
