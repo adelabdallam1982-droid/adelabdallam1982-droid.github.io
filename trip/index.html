@@ -1,38 +1,670 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلات العمرة</title>
 
-    <script>
-        const path = window.location.pathname;
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        if (path.startsWith("/trip/")) {
-            const slug = path.substring("/trip/".length);
+    <title>رحلة عمرة</title>
 
-            if (slug) {
-                const appUrl =
-                    "https://adelabdallam1982-droid.github.io/trip/" + slug;
+    <style>
 
-                document.addEventListener("DOMContentLoaded", function () {
-                    document.getElementById("tripSlug").textContent = slug;
-                });
-            }
+        * {
+            box-sizing: border-box;
         }
-    </script>
+
+        body {
+            margin: 0;
+            font-family:
+                Arial,
+                Tahoma,
+                sans-serif;
+
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        .header {
+
+            background: #087f5b;
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-radius:
+                0 0 25px 25px;
+        }
+
+        .header h1 {
+
+            margin: 0 0 10px;
+
+            font-size: 28px;
+        }
+
+        .header p {
+
+            margin: 0;
+
+            font-size: 17px;
+        }
+
+        .container {
+
+            max-width: 600px;
+
+            margin: auto;
+
+            padding: 20px;
+        }
+
+        .card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+
+            margin-top: 0;
+
+            color: #087f5b;
+
+            font-size: 21px;
+        }
+
+        .info {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 15px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid #eeeeee;
+        }
+
+        .info:last-child {
+
+            border-bottom: none;
+        }
+
+        .label {
+
+            color: #666;
+        }
+
+        .value {
+
+            font-weight: bold;
+
+            text-align: left;
+        }
+
+        .price {
+
+            color: #087f5b;
+
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+        .button {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 16px;
+
+            margin-top: 12px;
+
+            border-radius: 14px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+        .primary {
+
+            background: #087f5b;
+
+            color: white;
+        }
+
+        .secondary {
+
+            background: #e6f7f1;
+
+            color: #087f5b;
+        }
+
+        .trip-id {
+
+            background: #f1f3f5;
+
+            border-radius: 10px;
+
+            padding: 10px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 14px;
+        }
+
+        .footer {
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+            padding: 20px;
+        }
+
+    </style>
+
 </head>
 
+
 <body>
-    <h1>رحلة العمرة</h1>
 
-    <p>
-        جاري فتح الرحلة من خلال تطبيق رحلات العمرة...
+
+<div class="header">
+
+    <h1>رحلة عمرة</h1>
+
+    <p id="tripTitle">
+        رحلة عمرة
     </p>
 
-    <p>
+</div>
+
+
+<div class="container">
+
+
+    <!-- معلومات الرحلة -->
+
+    <div class="card">
+
+        <h2>🕋 معلومات الرحلة</h2>
+
+
+        <div class="info">
+
+            <span class="label">
+                📅 تاريخ الذهاب
+            </span>
+
+            <span class="value"
+                  id="departureDate">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span class="label">
+                📅 تاريخ العودة
+            </span>
+
+            <span class="value"
+                  id="returnDate">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span class="label">
+                📍 مكان التجمع
+            </span>
+
+            <span class="value"
+                  id="meeting">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span class="label">
+                🚌 وسيلة النقل
+            </span>
+
+            <span class="value"
+                  id="bus">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span class="label">
+                🏨 الفندق
+            </span>
+
+            <span class="value"
+                  id="hotel">
+                -
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- الأسعار -->
+
+    <div class="card">
+
+        <h2>💰 أسعار الغرف</h2>
+
+
+        <div class="info">
+
+            <span>
+                غرفة مفردة
+            </span>
+
+            <span class="price"
+                  id="single">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span>
+                غرفة مزدوجة
+            </span>
+
+            <span class="price"
+                  id="double">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span>
+                غرفة ثلاثية
+            </span>
+
+            <span class="price"
+                  id="triple">
+                -
+            </span>
+
+        </div>
+
+
+        <div class="info">
+
+            <span>
+                غرفة رباعية
+            </span>
+
+            <span class="price"
+                  id="quad">
+                -
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- التسجيل -->
+
+    <div class="card">
+
+        <h2>📱 التسجيل في الرحلة</h2>
+
+        <p>
+            للتسجيل وإكمال الحجز،
+            يمكنك استخدام تطبيق رحلات العمرة.
+        </p>
+
+
+        <a id="appButton"
+           class="button primary"
+           href="#">
+
+            فتح تطبيق رحلات العمرة
+
+        </a>
+
+
+        <a id="shareButton"
+           class="button secondary"
+           href="#">
+
+            مشاركة رابط الرحلة
+
+        </a>
+
+    </div>
+
+
+    <div class="trip-id">
+
         رقم الرحلة:
-        <strong id="tripSlug"></strong>
-    </p>
+
+        <strong id="tripSlug">
+            -
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer">
+
+    رحلات العمرة © 2026
+
+</div>
+
+
+
+<script>
+
+
+/*
+==================================================
+استخراج رقم الرحلة من الرابط
+==================================================
+*/
+
+const path =
+    window.location.pathname;
+
+
+const prefix =
+    "/trip/";
+
+
+let slug = "";
+
+
+if (path.startsWith(prefix)) {
+
+    slug =
+        path.substring(prefix.length)
+            .split("/")[0];
+
+}
+
+
+if (!slug) {
+
+    slug =
+        "riyadh-fall2026";
+
+}
+
+
+
+/*
+==================================================
+بيانات الرحلة الحالية
+==================================================
+*/
+
+const trips = {
+
+    "riyadh-fall2026": {
+
+        title:
+            "رحلة عمرة – الرياض",
+
+        departureDate:
+            "15 سبتمبر 2026",
+
+        returnDate:
+            "19 سبتمبر 2026",
+
+        meeting:
+            "محطة قطار الرياض",
+
+        bus:
+            "حافلة VIP",
+
+        hotel:
+            "Mövenpick Abraj Al Bait",
+
+        single:
+            "1,850 ريال",
+
+        double:
+            "1,350 ريال",
+
+        triple:
+            "1,100 ريال",
+
+        quad:
+            "950 ريال"
+
+    }
+
+};
+
+
+
+/*
+==================================================
+البحث عن الرحلة
+==================================================
+*/
+
+const trip =
+    trips[slug];
+
+
+
+/*
+==================================================
+عرض البيانات
+==================================================
+*/
+
+if (trip) {
+
+
+    document.getElementById(
+        "tripTitle"
+    ).textContent =
+        trip.title;
+
+
+    document.getElementById(
+        "departureDate"
+    ).textContent =
+        trip.departureDate;
+
+
+    document.getElementById(
+        "returnDate"
+    ).textContent =
+        trip.returnDate;
+
+
+    document.getElementById(
+        "meeting"
+    ).textContent =
+        trip.meeting;
+
+
+    document.getElementById(
+        "bus"
+    ).textContent =
+        trip.bus;
+
+
+    document.getElementById(
+        "hotel"
+    ).textContent =
+        trip.hotel;
+
+
+    document.getElementById(
+        "single"
+    ).textContent =
+        trip.single;
+
+
+    document.getElementById(
+        "double"
+    ).textContent =
+        trip.double;
+
+
+    document.getElementById(
+        "triple"
+    ).textContent =
+        trip.triple;
+
+
+    document.getElementById(
+        "quad"
+    ).textContent =
+        trip.quad;
+
+
+    document.getElementById(
+        "tripSlug"
+    ).textContent =
+        slug;
+
+
+}
+
+
+
+/*
+==================================================
+رابط التطبيق
+==================================================
+*/
+
+const appUrl =
+    "https://adelabdallam1982-droid.github.io/trip/"
+    + slug;
+
+
+document.getElementById(
+    "appButton"
+).href =
+    appUrl;
+
+
+
+/*
+==================================================
+المشاركة
+==================================================
+*/
+
+document.getElementById(
+    "shareButton"
+).addEventListener(
+    "click",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        try {
+
+            await navigator.share({
+
+                title:
+                    trip
+                    ? trip.title
+                    : "رحلة عمرة",
+
+                text:
+                    "معلومات رحلة العمرة",
+
+                url:
+                    window.location.href
+
+            });
+
+        }
+        catch (error) {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                alert(
+                    "تم نسخ رابط الرحلة"
+                );
+
+            }
+            catch (copyError) {
+
+                alert(
+                    window.location.href
+                );
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
 </body>
+
 </html>
+```
