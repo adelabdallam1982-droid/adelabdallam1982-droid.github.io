@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -203,7 +202,7 @@
     <h1>رحلة عمرة</h1>
 
     <p id="tripTitle">
-        رحلة عمرة
+        جاري تحميل الرحلة...
     </p>
 
 </div>
@@ -415,28 +414,64 @@
 
 /*
 ==================================================
-استخراج رقم الرحلة من الرابط
+استخراج رقم الرحلة
+==================================================
+
+يدعم الطريقتين:
+
+1. /trip/riyadh-fall2026
+
+2. /trip/?trip=riyadh-fall2026
+
 ==================================================
 */
 
-const path =
-    window.location.pathname;
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
 
 
-const prefix =
-    "/trip/";
+let slug =
+    urlParams.get("trip");
 
 
-let slug = "";
+/*
+==================================================
+إذا لم نجد الرقم في ?trip=
+نبحث عنه في الرابط نفسه
+==================================================
+*/
 
 
-if (path.startsWith(prefix)) {
+if (!slug) {
 
-    slug =
-        path.substring(prefix.length)
-            .split("/")[0];
+    const path =
+        window.location.pathname;
+
+
+    const prefix =
+        "/trip/";
+
+
+    if (path.startsWith(prefix)) {
+
+        slug =
+            path
+                .substring(prefix.length)
+                .split("/")[0];
+
+    }
 
 }
+
+
+/*
+==================================================
+الرحلة الافتراضية
+==================================================
+*/
 
 
 if (!slug) {
@@ -447,14 +482,27 @@ if (!slug) {
 }
 
 
-
 /*
 ==================================================
-بيانات الرحلة الحالية
+تنظيف رقم الرحلة
 ==================================================
 */
 
+
+slug =
+    slug.trim();
+
+
+
+/*
+==================================================
+بيانات الرحلات
+==================================================
+*/
+
+
 const trips = {
+
 
     "riyadh-fall2026": {
 
@@ -500,6 +548,7 @@ const trips = {
 ==================================================
 */
 
+
 const trip =
     trips[slug];
 
@@ -507,9 +556,10 @@ const trip =
 
 /*
 ==================================================
-عرض البيانات
+عرض بيانات الرحلة
 ==================================================
 */
+
 
 if (trip) {
 
@@ -579,6 +629,34 @@ if (trip) {
     ).textContent =
         slug;
 
+}
+
+
+/*
+==================================================
+إذا كانت الرحلة غير موجودة
+==================================================
+*/
+
+
+else {
+
+    document.getElementById(
+        "tripTitle"
+    ).textContent =
+        "الرحلة غير موجودة";
+
+
+    document.getElementById(
+        "tripSlug"
+    ).textContent =
+        slug;
+
+
+    document.getElementById(
+        "appButton"
+    ).style.display =
+        "none";
 
 }
 
@@ -589,6 +667,7 @@ if (trip) {
 رابط التطبيق
 ==================================================
 */
+
 
 const appUrl =
     "https://adelabdallam1982-droid.github.io/trip/"
@@ -607,6 +686,7 @@ document.getElementById(
 المشاركة
 ==================================================
 */
+
 
 document.getElementById(
     "shareButton"
@@ -630,28 +710,37 @@ document.getElementById(
                     "معلومات رحلة العمرة",
 
                 url:
-                    window.location.href
+                    "https://adelabdallam1982-droid.github.io/trip/"
+                    + slug
 
             });
 
         }
+
+
         catch (error) {
+
 
             try {
 
                 await navigator.clipboard.writeText(
-                    window.location.href
+                    "https://adelabdallam1982-droid.github.io/trip/"
+                    + slug
                 );
+
 
                 alert(
                     "تم نسخ رابط الرحلة"
                 );
 
             }
+
+
             catch (copyError) {
 
                 alert(
-                    window.location.href
+                    "https://adelabdallam1982-droid.github.io/trip/"
+                    + slug
                 );
 
             }
@@ -661,10 +750,10 @@ document.getElementById(
     }
 );
 
+
 </script>
 
 
 </body>
 
 </html>
-```
