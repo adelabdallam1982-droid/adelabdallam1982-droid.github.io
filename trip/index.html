@@ -12,26 +12,34 @@
 
 <title>رحلة عمرة</title>
 
+
 <style>
 
     * {
         box-sizing: border-box;
     }
 
+
     body {
+
         margin: 0;
+
         font-family:
             Arial,
             Tahoma,
             sans-serif;
 
         background: #f5f7fa;
+
         color: #222;
+
     }
+
 
     .header {
 
         background: #087f5b;
+
         color: white;
 
         text-align: center;
@@ -40,178 +48,264 @@
 
         border-radius:
             0 0 25px 25px;
+
     }
+
 
     .header h1 {
 
-        margin: 0 0 10px;
+        margin:
+            0 0 10px;
 
-        font-size: 28px;
+        font-size:
+            28px;
+
     }
+
 
     .header p {
 
         margin: 0;
 
-        font-size: 17px;
+        font-size:
+            17px;
+
     }
+
 
     .container {
 
-        max-width: 600px;
+        max-width:
+            600px;
 
-        margin: auto;
+        margin:
+            auto;
 
-        padding: 20px;
+        padding:
+            20px;
+
     }
+
 
     .card {
 
-        background: white;
+        background:
+            white;
 
-        border-radius: 18px;
+        border-radius:
+            18px;
 
-        padding: 22px;
+        padding:
+            22px;
 
-        margin-bottom: 18px;
+        margin-bottom:
+            18px;
 
         box-shadow:
             0 4px 15px
             rgba(0,0,0,0.08);
+
     }
+
 
     .card h2 {
 
-        margin-top: 0;
+        margin-top:
+            0;
 
-        color: #087f5b;
+        color:
+            #087f5b;
 
-        font-size: 21px;
+        font-size:
+            21px;
+
     }
+
 
     .info {
 
-        display: flex;
+        display:
+            flex;
 
         justify-content:
             space-between;
 
-        gap: 15px;
+        gap:
+            15px;
 
-        padding: 13px 0;
+        padding:
+            13px 0;
 
         border-bottom:
             1px solid #eeeeee;
+
     }
+
 
     .info:last-child {
 
-        border-bottom: none;
+        border-bottom:
+            none;
+
     }
+
 
     .label {
 
-        color: #666;
+        color:
+            #666;
+
     }
+
 
     .value {
 
-        font-weight: bold;
+        font-weight:
+            bold;
 
-        text-align: left;
+        text-align:
+            left;
+
     }
+
 
     .price {
 
-        color: #087f5b;
+        color:
+            #087f5b;
 
-        font-size: 17px;
+        font-size:
+            17px;
 
-        font-weight: bold;
+        font-weight:
+            bold;
+
     }
+
 
     .button {
 
-        display: block;
+        display:
+            block;
 
-        width: 100%;
+        width:
+            100%;
 
-        padding: 16px;
+        padding:
+            16px;
 
-        margin-top: 12px;
+        margin-top:
+            12px;
 
-        border-radius: 14px;
+        border-radius:
+            14px;
 
-        text-align: center;
+        text-align:
+            center;
 
-        text-decoration: none;
+        text-decoration:
+            none;
 
-        font-size: 17px;
+        font-size:
+            17px;
 
-        font-weight: bold;
+        font-weight:
+            bold;
 
-        cursor: pointer;
+        cursor:
+            pointer;
 
-        border: none;
     }
+
 
     .primary {
 
-        background: #087f5b;
+        background:
+            #087f5b;
 
-        color: white;
+        color:
+            white;
+
     }
+
 
     .secondary {
 
-        background: #e6f7f1;
+        background:
+            #e6f7f1;
 
-        color: #087f5b;
+        color:
+            #087f5b;
+
     }
+
 
     .trip-id {
 
-        background: #f1f3f5;
+        background:
+            #f1f3f5;
 
-        border-radius: 10px;
+        border-radius:
+            10px;
 
-        padding: 10px;
+        padding:
+            10px;
 
-        text-align: center;
+        text-align:
+            center;
 
-        color: #555;
+        color:
+            #555;
 
-        font-size: 14px;
+        font-size:
+            14px;
+
     }
+
 
     .footer {
 
-        text-align: center;
+        text-align:
+            center;
 
-        color: #777;
+        color:
+            #777;
 
-        font-size: 13px;
+        font-size:
+            13px;
 
-        padding: 20px;
+        padding:
+            20px;
+
     }
+
 
     .message {
 
-        display: none;
+        display:
+            none;
 
-        margin-top: 15px;
+        margin-top:
+            15px;
 
-        padding: 14px;
+        padding:
+            14px;
 
-        border-radius: 12px;
+        border-radius:
+            12px;
 
-        background: #f1f3f5;
+        background:
+            #f1f3f5;
 
-        color: #555;
+        color:
+            #555;
 
-        text-align: center;
+        text-align:
+            center;
 
-        font-size: 14px;
+        font-size:
+            14px;
+
     }
 
 </style>
@@ -224,7 +318,10 @@
 <div class="header">
 
 ```
-<h1>رحلة عمرة</h1>
+<h1>
+    رحلة عمرة
+</h1>
+
 
 <p id="tripTitle">
     جاري تحميل الرحلة...
@@ -240,7 +337,9 @@
 
 <div class="card">
 
-    <h2>🕋 معلومات الرحلة</h2>
+    <h2>
+        🕋 معلومات الرحلة
+    </h2>
 
 
     <div class="info">
@@ -249,12 +348,17 @@
             📅 تاريخ الذهاب
         </span>
 
-        <span class="value"
-              id="departureDate">
+
+        <span
+            class="value"
+            id="departureDate">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -263,12 +367,17 @@
             📅 تاريخ العودة
         </span>
 
-        <span class="value"
-              id="returnDate">
+
+        <span
+            class="value"
+            id="returnDate">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -277,12 +386,17 @@
             📍 مكان التجمع
         </span>
 
-        <span class="value"
-              id="meeting">
+
+        <span
+            class="value"
+            id="meeting">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -291,12 +405,17 @@
             🚌 وسيلة النقل
         </span>
 
-        <span class="value"
-              id="bus">
+
+        <span
+            class="value"
+            id="bus">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -305,9 +424,13 @@
             🏨 الفندق
         </span>
 
-        <span class="value"
-              id="hotel">
+
+        <span
+            class="value"
+            id="hotel">
+
             -
+
         </span>
 
     </div>
@@ -315,11 +438,14 @@
 </div>
 
 
+
 <!-- الأسعار -->
 
 <div class="card">
 
-    <h2>💰 أسعار الغرف</h2>
+    <h2>
+        💰 أسعار الغرف
+    </h2>
 
 
     <div class="info">
@@ -328,12 +454,17 @@
             غرفة مفردة
         </span>
 
-        <span class="price"
-              id="single">
+
+        <span
+            class="price"
+            id="single">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -342,12 +473,17 @@
             غرفة مزدوجة
         </span>
 
-        <span class="price"
-              id="double">
+
+        <span
+            class="price"
+            id="double">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -356,12 +492,17 @@
             غرفة ثلاثية
         </span>
 
-        <span class="price"
-              id="triple">
+
+        <span
+            class="price"
+            id="triple">
+
             -
+
         </span>
 
     </div>
+
 
 
     <div class="info">
@@ -370,9 +511,13 @@
             غرفة رباعية
         </span>
 
-        <span class="price"
-              id="quad">
+
+        <span
+            class="price"
+            id="quad">
+
             -
+
         </span>
 
     </div>
@@ -380,45 +525,61 @@
 </div>
 
 
+
 <!-- التسجيل -->
 
 <div class="card">
 
-    <h2>📱 التسجيل في الرحلة</h2>
+    <h2>
+        📱 التسجيل في الرحلة
+    </h2>
+
 
     <p>
+
         للتسجيل وإكمال الحجز،
         يمكنك استخدام تطبيق رحلات العمرة.
+
     </p>
 
 
-    <a id="appButton"
-       class="button primary"
-       href="#">
+
+    <!-- زر فتح التطبيق -->
+
+    <a
+        id="appButton"
+        class="button primary"
+        href="#">
 
         فتح تطبيق رحلات العمرة
 
     </a>
 
 
-    <a id="shareButton"
-       class="button secondary"
-       href="#">
+
+    <!-- زر المشاركة -->
+
+    <a
+        id="shareButton"
+        class="button secondary"
+        href="#">
 
         مشاركة رابط الرحلة
 
     </a>
 
 
-    <div id="appMessage"
-         class="message">
 
-        إذا لم يفتح التطبيق،
-        تأكد من تثبيت تطبيق رحلات العمرة.
+    <div
+        id="appMessage"
+        class="message">
+
+        يتم فتح تطبيق رحلات العمرة...
 
     </div>
 
 </div>
+
 
 
 <div class="trip-id">
@@ -472,6 +633,15 @@ let slug =
     urlParams.get("trip");
 
 
+
+/*
+==================================================
+إذا لم نجد الرقم في ?trip=
+نبحث عنه في مسار الرابط
+==================================================
+*/
+
+
 if (!slug) {
 
     const path =
@@ -494,6 +664,7 @@ if (!slug) {
 }
 
 
+
 /*
 ==================================================
 الرحلة الافتراضية
@@ -507,6 +678,7 @@ if (!slug) {
         "riyadh-fall2026";
 
 }
+
 
 
 /*
@@ -597,10 +769,12 @@ if (trip) {
         trip.title;
 
 
+
     document.getElementById(
         "departureDate"
     ).textContent =
         trip.departureDate;
+
 
 
     document.getElementById(
@@ -609,10 +783,12 @@ if (trip) {
         trip.returnDate;
 
 
+
     document.getElementById(
         "meeting"
     ).textContent =
         trip.meeting;
+
 
 
     document.getElementById(
@@ -621,10 +797,12 @@ if (trip) {
         trip.bus;
 
 
+
     document.getElementById(
         "hotel"
     ).textContent =
         trip.hotel;
+
 
 
     document.getElementById(
@@ -633,10 +811,12 @@ if (trip) {
         trip.single;
 
 
+
     document.getElementById(
         "double"
     ).textContent =
         trip.double;
+
 
 
     document.getElementById(
@@ -645,10 +825,12 @@ if (trip) {
         trip.triple;
 
 
+
     document.getElementById(
         "quad"
     ).textContent =
         trip.quad;
+
 
 
     document.getElementById(
@@ -657,6 +839,14 @@ if (trip) {
         slug;
 
 }
+
+
+
+/*
+==================================================
+الرحلة غير موجودة
+==================================================
+*/
 
 
 else {
@@ -668,10 +858,12 @@ else {
         "الرحلة غير موجودة";
 
 
+
     document.getElementById(
         "tripSlug"
     ).textContent =
         slug;
+
 
 
     document.getElementById(
@@ -685,7 +877,7 @@ else {
 
 /*
 ==================================================
-رابط الرحلة الأصلي
+رابط صفحة الويب
 ==================================================
 */
 
@@ -698,14 +890,26 @@ const tripUrl =
 
 /*
 ==================================================
-زر فتح التطبيق
+رابط التطبيق Android
 ==================================================
 
-نستخدم نفس HTTPS URL.
+هذا الرابط يفتح تطبيق رحلات العمرة:
 
-Android App Links الموجود في التطبيق
-سيتولى فتح التطبيق على Android.
+umrahtrips://trip/riyadh-fall2026
 
+==================================================
+*/
+
+
+const androidAppUrl =
+    "umrahtrips://trip/"
+    + encodeURIComponent(slug);
+
+
+
+/*
+==================================================
+زر فتح التطبيق
 ==================================================
 */
 
@@ -713,13 +917,13 @@ Android App Links الموجود في التطبيق
 document.getElementById(
     "appButton"
 ).href =
-    tripUrl;
+    androidAppUrl;
 
 
 
 /*
 ==================================================
-محاولة فتح التطبيق
+عند الضغط على زر التطبيق
 ==================================================
 */
 
@@ -731,23 +935,11 @@ document.getElementById(
     function() {
 
 
-        /*
-        ------------------------------------------
-        إظهار رسالة بسيطة للمستخدم
-        ------------------------------------------
-        */
+        document.getElementById(
+            "appMessage"
+        ).style.display =
+            "block";
 
-        setTimeout(
-            function() {
-
-                document.getElementById(
-                    "appMessage"
-                ).style.display =
-                    "block";
-
-            },
-            1500
-        );
 
     }
 );
@@ -756,7 +948,12 @@ document.getElementById(
 
 /*
 ==================================================
-المشاركة
+زر المشاركة
+==================================================
+
+المشاركة تستخدم رابط HTTPS وليس
+الرابط الداخلي للتطبيق.
+
 ==================================================
 */
 
@@ -767,7 +964,9 @@ document.getElementById(
     "click",
     async function(event) {
 
+
         event.preventDefault();
+
 
 
         try {
@@ -791,6 +990,7 @@ document.getElementById(
         }
 
 
+
         catch (error) {
 
 
@@ -807,6 +1007,7 @@ document.getElementById(
                 );
 
             }
+
 
 
             catch (copyError) {
