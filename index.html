@@ -1,13 +1,127 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رحلات العمرة</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .trip-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 14px 24px;
+        margin-top: 15px;
+        border-radius: 10px;
+        background: #198754;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .info {
+        color: #666;
+        line-height: 1.8;
+    }
+</style>
+```
+
 </head>
+
 <body>
-    <h1>رحلات العمرة</h1>
-    <p>مرحباً بك في تطبيق رحلات العمرة.</p>
-    <p>سيتم فتح الرحلة من خلال تطبيق رحلات العمرة.</p>
+
+<div class="card">
+
+```
+<h1>🕋 رحلات العمرة</h1>
+
+<p class="info">
+    مرحباً بك في رحلة العمرة
+</p>
+
+<div id="tripInfo" class="trip-name">
+    جاري تحميل الرحلة...
+</div>
+
+<p class="info">
+    يمكنك فتح الرحلة من خلال تطبيق رحلات العمرة إذا كان التطبيق مثبتًا على جهازك.
+</p>
+
+<a id="openApp"
+   class="button"
+   href="#">
+    فتح تطبيق رحلات العمرة
+</a>
+```
+
+</div>
+
+<script>
+
+    // --------------------------------------------------
+    // قراءة اسم الرحلة من الرابط
+    // مثال:
+    // /trip/riyadh-fall2026
+    // --------------------------------------------------
+
+    const path = window.location.pathname;
+
+    let slug = "";
+
+    if (path.startsWith("/trip/")) {
+        slug = path.substring("/trip/".length).replace(/\/$/, "");
+    }
+
+    // عرض اسم الرحلة
+    const tripInfo = document.getElementById("tripInfo");
+
+    if (slug) {
+        tripInfo.textContent = "رحلة: " + slug;
+    } else {
+        tripInfo.textContent = "لم يتم تحديد رحلة";
+    }
+
+    // --------------------------------------------------
+    // رابط فتح التطبيق
+    // --------------------------------------------------
+
+    const openApp = document.getElementById("openApp");
+
+    if (slug) {
+        openApp.href =
+            "https://adelabdallam1982-droid.github.io/trip/" + slug;
+    } else {
+        openApp.style.display = "none";
+    }
+
+</script>
+
 </body>
 </html>
