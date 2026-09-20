@@ -641,33 +641,76 @@
     ================================================
     */
 
-    const appButton =
-        document.getElementById(
-            "appButton"
-        );
+   const appButton =
+    document.getElementById(
+        "appButton"
+    );
 
 
-    appButton.href =
-        androidAppUrl;
+/*
+========================================
+زر فتح التطبيق حسب نوع الجهاز
+========================================
+*/
+
+appButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+        const userAgent =
+            navigator.userAgent ||
+            navigator.vendor ||
+            window.opera;
 
 
-    /*
-    عند الضغط على زر التطبيق
-    */
+        /*
+        Android
+        */
 
-    appButton.addEventListener(
-        "click",
-        function() {
+        if (/android/i.test(userAgent)) {
 
             document.getElementById(
                 "appMessage"
             ).style.display =
                 "block";
 
+            window.location.href =
+                androidAppUrl;
+
+            return;
         }
-    );
 
 
+        /*
+        iPhone / iPad
+        */
+
+        if (
+            /iPhone|iPad|iPod/i.test(
+                userAgent
+            )
+        ) {
+
+            alert(
+                "تطبيق رحلات العمرة متاح حاليًا لأجهزة Android. يمكنك استخدام صفحة الرحلة والتسجيل من خلال الرابط."
+            );
+
+            return;
+        }
+
+
+        /*
+        أجهزة الكمبيوتر والأجهزة الأخرى
+        */
+
+        alert(
+            "تطبيق رحلات العمرة متاح حاليًا لأجهزة Android."
+        );
+
+    }
+);
     /*
     ================================================
     زر المشاركة
