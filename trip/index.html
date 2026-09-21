@@ -641,7 +641,26 @@
 
     const appButton =
         document.getElementById("appButton");
+const userAgent =
+    navigator.userAgent ||
+    navigator.vendor ||
+    window.opera;
 
+if (/android/i.test(userAgent)) {
+
+    appButton.textContent =
+        "فتح تطبيق رحلات العمرة";
+
+} else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+
+    appButton.textContent =
+        "استخدام صفحة الرحلة";
+
+} else {
+
+    appButton.textContent =
+        "استخدام صفحة الرحلة";
+}
 
    appButton.addEventListener(
     "click",
