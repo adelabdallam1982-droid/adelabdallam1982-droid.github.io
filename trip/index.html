@@ -643,84 +643,53 @@
         document.getElementById("appButton");
 
 
-    appButton.addEventListener(
-        "click",
-        function(event) {
+   appButton.addEventListener(
+    "click",
+    function(event) {
 
-            event.preventDefault();
+        event.preventDefault();
 
+        const userAgent =
+            navigator.userAgent ||
+            navigator.vendor ||
+            window.opera;
 
-            const userAgent =
-                navigator.userAgent ||
-                navigator.vendor ||
-                window.opera;
+        // Android
+        if (/android/i.test(userAgent)) {
 
+            document.getElementById(
+                "appMessage"
+            ).style.display = "block";
 
-            /*
-            ========================================
-            Android
-            ========================================
-            */
+            document.getElementById(
+                "appMessage"
+            ).textContent =
+                "جاري فتح تطبيق رحلات العمرة...";
 
-            if (/android/i.test(userAgent)) {
+            window.location.href =
+                androidIntentUrl;
 
-                document.getElementById(
-                    "appMessage"
-                ).style.display =
-                    "block";
-
-
-                document.getElementById(
-                    "appMessage"
-                ).textContent =
-                    "جاري فتح تطبيق رحلات العمرة...";
-
-
-                /*
-                استخدام Android Intent
-                */
-
-                window.location.href =
-                    androidIntentUrl;
-
-                return;
-            }
-
-
-            /*
-            ========================================
-            iPhone / iPad
-            ========================================
-            */
-
-            if (
-                /iPhone|iPad|iPod/i.test(
-                    userAgent
-                )
-            ) {
-
-                alert(
-                    "تطبيق رحلات العمرة متاح حاليًا لأجهزة Android. يمكنك استخدام صفحة الرحلة من هذا الرابط."
-                );
-
-                return;
-            }
-
-
-            /*
-            ========================================
-            الكمبيوتر والأجهزة الأخرى
-            ========================================
-            */
-
-            alert(
-                "تطبيق رحلات العمرة متاح حاليًا لأجهزة Android."
-            );
-
+            return;
         }
-    );
 
+        // iPhone / iPad
+        if (
+            /iPhone|iPad|iPod/i.test(
+                userAgent
+            )
+        ) {
 
+            window.location.href =
+                tripUrl;
+
+            return;
+        }
+
+        // الكمبيوتر والأجهزة الأخرى
+        window.location.href =
+            tripUrl;
+    }
+);
     /*
     ================================================
     زر المشاركة
