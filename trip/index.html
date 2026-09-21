@@ -629,28 +629,46 @@
 
     ================================================
     */
-
-    const androidAppUrl =
-        "umrahtrips://trip/"
-        + encodeURIComponent(slug);
-
-
-    /*
-    ================================================
-    زر فتح التطبيق
-    ================================================
-    */
-
-   const appButton =
-    document.getElementById(
-        "appButton"
-    );
-
-
 /*
 ========================================
-زر فتح التطبيق حسب نوع الجهاز
+زر فتح التطبيق
 ========================================
+*/
+
+const appButton =
+    document.getElementById("appButton");
+
+appButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+        /*
+        رابط HTTPS الخاص بالرحلة
+        وهو نفس الرابط الذي يدعم Android App Links
+        */
+
+        const appLink =
+            tripUrl;
+
+        /*
+        محاولة فتح التطبيق
+        */
+
+        document.getElementById(
+            "appMessage"
+        ).style.display = "block";
+
+        document.getElementById(
+            "appMessage"
+        ).textContent =
+            "جاري فتح تطبيق رحلات العمرة...";
+
+        window.location.href = appLink;
+
+    }
+);
 */
 
 appButton.addEventListener(
