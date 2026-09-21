@@ -1,6 +1,4 @@
-```html
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
@@ -141,11 +139,36 @@
             font-size: 14px;
         }
 
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 14px;
+            font-family: inherit;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #087f5b;
+        }
+
     </style>
 
 </head>
 
 <body>
+
 
 <div class="header">
 
@@ -317,113 +340,203 @@
             📱 التسجيل في الرحلة
         </h2>
 
-        <p>```html
-<p>
-    يمكنك التسجيل في الرحلة مباشرة من هذه الصفحة.
-</p>
-
-<div style="margin-top: 18px;">
-
-    <label style="display:block; margin-bottom:6px; font-weight:bold;">
-        الاسم الكامل
-    </label>
-
-    <input
-        id="pilgrimName"
-        type="text"
-        placeholder="اكتب الاسم الكامل"
-        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
-    >
-
-    <label style="display:block; margin-bottom:6px; font-weight:bold;">
-        رقم الجوال
-    </label>
-
-    <input
-        id="pilgrimPhone"
-        type="tel"
-        placeholder="05xxxxxxxx"
-        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
-    >
-
-    <label style="display:block; margin-bottom:6px; font-weight:bold;">
-        نوع الغرفة
-    </label>
-
-    <select
-        id="roomType"
-        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
-    >
-        <option value="SINGLE">مفردة</option>
-        <option value="DOUBLE" selected>مزدوجة</option>
-        <option value="TRIPLE">ثلاثية</option>
-        <option value="QUAD">رباعية</option>
-    </select>
-
-    <label style="display:block; margin-bottom:6px; font-weight:bold;">
-        عدد المعتمرين
-    </label>
-
-    <input
-        id="pilgrimCount"
-        type="number"
-        min="1"
-        value="1"
-        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
-    >
-
-</div>
-
-<button
-    id="webBookingButton"
-    class="button primary"
-    type="button"
->
-    تسجيل في الرحلة
-</button>
-
-<div
-    id="bookingMessage"
-    class="message"
-    style="display:none;"
->
-</div>
-```
-.
+        <p>
+            يمكنك التسجيل في الرحلة مباشرة من هذه الصفحة.
         </p>
+
+
+        <div style="margin-top: 18px;">
+
+
+            <!-- الاسم -->
+
+            <label class="form-label">
+                الاسم الكامل
+            </label>
+
+            <input
+                id="pilgrimName"
+                class="form-input"
+                type="text"
+                placeholder="اكتب الاسم الكامل"
+                autocomplete="name"
+            >
+
+
+            <!-- الجوال -->
+
+            <label class="form-label">
+                رقم الجوال
+            </label>
+
+            <input
+                id="pilgrimPhone"
+                class="form-input"
+                type="tel"
+                placeholder="05xxxxxxxx"
+                autocomplete="tel"
+            >
+
+
+            <!-- رقم الهوية -->
+
+            <label class="form-label">
+                رقم الهوية
+            </label>
+
+            <input
+                id="nationalId"
+                class="form-input"
+                type="text"
+                placeholder="اكتب رقم الهوية"
+                inputmode="numeric"
+            >
+
+
+            <!-- الجنس -->
+
+            <label class="form-label">
+                الجنس
+            </label>
+
+            <select
+                id="gender"
+                class="form-select"
+            >
+
+                <option value="">
+                    اختر الجنس
+                </option>
+
+                <option value="MALE">
+                    ذكر
+                </option>
+
+                <option value="FEMALE">
+                    أنثى
+                </option>
+
+            </select>
+
+
+            <!-- نوع الغرفة -->
+
+            <label class="form-label">
+                نوع الغرفة
+            </label>
+
+            <select
+                id="roomType"
+                class="form-select"
+            >
+
+                <option value="SINGLE">
+                    مفردة
+                </option>
+
+                <option value="DOUBLE"
+                        selected>
+                    مزدوجة
+                </option>
+
+                <option value="TRIPLE">
+                    ثلاثية
+                </option>
+
+                <option value="QUAD">
+                    رباعية
+                </option>
+
+            </select>
+
+
+            <!-- عدد المعتمرين -->
+
+            <label class="form-label">
+                عدد المعتمرين
+            </label>
+
+            <input
+                id="pilgrimCount"
+                class="form-input"
+                type="number"
+                min="1"
+                value="1"
+                inputmode="numeric"
+            >
+
+
+            <!-- الملاحظات -->
+
+            <label class="form-label">
+                ملاحظات
+            </label>
+
+            <textarea
+                id="notes"
+                class="form-input"
+                placeholder="أي ملاحظات إضافية"
+                rows="3"
+                style="resize:vertical;"
+            ></textarea>
+
+
+        </div>
+
+
+        <!-- زر التسجيل -->
+
+        <button
+            id="webBookingButton"
+            class="button primary"
+            type="button"
+        >
+            تسجيل في الرحلة
+        </button>
+
+
+        <!-- رسالة التسجيل -->
+
+        <div
+            id="bookingMessage"
+            class="message"
+        >
+        </div>
 
 
         <!-- زر فتح التطبيق -->
 
-        <a id="appButton"
-           class="button primary"
-           href="#">
-
+        <a
+            id="appButton"
+            class="button primary"
+            href="#"
+        >
             فتح تطبيق رحلات العمرة
-
         </a>
 
 
         <!-- زر المشاركة -->
 
-        <a id="shareButton"
-           class="button secondary"
-           href="#">
-
+        <a
+            id="shareButton"
+            class="button secondary"
+            href="#"
+        >
             مشاركة رابط الرحلة
-
         </a>
 
 
-        <div id="appMessage"
-             class="message">
-
+        <div
+            id="appMessage"
+            class="message"
+        >
             يتم فتح تطبيق رحلات العمرة...
-
         </div>
 
     </div>
 
+
+    <!-- رقم الرحلة -->
 
     <div class="trip-id">
 
@@ -447,16 +560,18 @@
 
 <script>
 
+
     /*
-    ================================================
+    =================================================
     استخراج رقم الرحلة
-    ================================================
+    =================================================
     */
 
     const urlParams =
         new URLSearchParams(
             window.location.search
         );
+
 
     let slug =
         urlParams.get("trip");
@@ -472,8 +587,10 @@
         const path =
             window.location.pathname;
 
+
         const prefix =
             "/trip/";
+
 
         if (path.startsWith(prefix)) {
 
@@ -508,9 +625,9 @@
 
 
     /*
-    ================================================
+    =================================================
     بيانات الرحلات
-    ================================================
+    =================================================
     */
 
     const trips = {
@@ -553,9 +670,9 @@
 
 
     /*
-    ================================================
+    =================================================
     البحث عن الرحلة
-    ================================================
+    =================================================
     */
 
     const trip =
@@ -563,9 +680,9 @@
 
 
     /*
-    ================================================
+    =================================================
     عرض بيانات الرحلة
-    ================================================
+    =================================================
     */
 
     if (trip) {
@@ -639,9 +756,9 @@
 
 
     /*
-    ================================================
+    =================================================
     الرحلة غير موجودة
-    ================================================
+    =================================================
     */
 
     else {
@@ -667,9 +784,9 @@
 
 
     /*
-    ================================================
+    =================================================
     رابط صفحة الويب
-    ================================================
+    =================================================
     */
 
     const tripUrl =
@@ -678,9 +795,9 @@
 
 
     /*
-    ================================================
+    =================================================
     رابط تطبيق Android
-    ================================================
+    =================================================
     */
 
     const androidAppUrl =
@@ -689,9 +806,9 @@
 
 
     /*
-    ================================================
+    =================================================
     رابط Intent الخاص بـ Android
-    ================================================
+    =================================================
     */
 
     const androidIntentUrl =
@@ -704,85 +821,151 @@
 
 
     /*
-    ================================================
+    =================================================
     زر فتح التطبيق
-    ================================================
+    =================================================
     */
 
     const appButton =
-        document.getElementById("appButton");
-const userAgent =
-    navigator.userAgent ||
-    navigator.vendor ||
-    window.opera;
+        document.getElementById(
+            "appButton"
+        );
 
-if (/android/i.test(userAgent)) {
 
-    appButton.textContent =
-        "فتح تطبيق رحلات العمرة";
+    /*
+    تحديد نوع الجهاز
+    */
 
-} else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+    const userAgent =
+        navigator.userAgent ||
+        navigator.vendor ||
+        window.opera;
 
-    appButton.textContent =
-        "استخدام صفحة الرحلة";
 
-} else {
+    /*
+    Android
+    */
 
-    appButton.textContent =
-        "استخدام صفحة الرحلة";
-}
+    if (/android/i.test(userAgent)) {
 
-   appButton.addEventListener(
-    "click",
-    function(event) {
+        appButton.textContent =
+            "فتح تطبيق رحلات العمرة";
 
-        event.preventDefault();
+    }
 
-        const userAgent =
-            navigator.userAgent ||
-            navigator.vendor ||
-            window.opera;
 
-        // Android
-        if (/android/i.test(userAgent)) {
+    /*
+    iPhone / iPad
+    */
 
-            document.getElementById(
-                "appMessage"
-            ).style.display = "block";
+    else if (
+        /iPhone|iPad|iPod/i.test(
+            userAgent
+        )
+    ) {
 
-            document.getElementById(
-                "appMessage"
-            ).textContent =
-                "جاري فتح تطبيق رحلات العمرة...";
+        appButton.textContent =
+            "استخدام صفحة الرحلة";
 
-            window.location.href =
-                androidIntentUrl;
+    }
 
-            return;
-        }
 
-        // iPhone / iPad
-        if (
-            /iPhone|iPad|iPod/i.test(
-                userAgent
-            )
-        ) {
+    /*
+    الكمبيوتر والأجهزة الأخرى
+    */
+
+    else {
+
+        appButton.textContent =
+            "استخدام صفحة الرحلة";
+
+    }
+
+
+    /*
+    =================================================
+    الضغط على زر التطبيق
+    =================================================
+    */
+
+    appButton.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const currentUserAgent =
+                navigator.userAgent ||
+                navigator.vendor ||
+                window.opera;
+
+
+            /*
+            Android
+            */
+
+            if (
+                /android/i.test(
+                    currentUserAgent
+                )
+            ) {
+
+                document.getElementById(
+                    "appMessage"
+                ).style.display =
+                    "block";
+
+
+                document.getElementById(
+                    "appMessage"
+                ).textContent =
+                    "جاري فتح تطبيق رحلات العمرة...";
+
+
+                window.location.href =
+                    androidIntentUrl;
+
+
+                return;
+
+            }
+
+
+            /*
+            iPhone / iPad
+            */
+
+            if (
+                /iPhone|iPad|iPod/i.test(
+                    currentUserAgent
+                )
+            ) {
+
+                window.location.href =
+                    tripUrl;
+
+
+                return;
+
+            }
+
+
+            /*
+            الكمبيوتر والأجهزة الأخرى
+            */
 
             window.location.href =
                 tripUrl;
 
-            return;
         }
+    );
 
-        // الكمبيوتر والأجهزة الأخرى
-        window.location.href =
-            tripUrl;
-    }
-);
+
     /*
-    ================================================
+    =================================================
     زر المشاركة
-    ================================================
+    =================================================
     */
 
     const shareButton =
@@ -799,6 +982,10 @@ if (/android/i.test(userAgent)) {
 
 
             try {
+
+                /*
+                إذا كان الجهاز يدعم المشاركة
+                */
 
                 if (
                     navigator.share
@@ -821,11 +1008,17 @@ if (/android/i.test(userAgent)) {
 
                 }
 
+
+                /*
+                إذا لم يدعم المشاركة
+                */
+
                 else {
 
                     await navigator.clipboard.writeText(
                         tripUrl
                     );
+
 
                     alert(
                         "تم نسخ رابط الرحلة"
@@ -835,6 +1028,7 @@ if (/android/i.test(userAgent)) {
 
             }
 
+
             catch (error) {
 
                 try {
@@ -843,11 +1037,13 @@ if (/android/i.test(userAgent)) {
                         tripUrl
                     );
 
+
                     alert(
                         "تم نسخ رابط الرحلة"
                     );
 
                 }
+
 
                 catch (copyError) {
 
@@ -862,9 +1058,9 @@ if (/android/i.test(userAgent)) {
         }
     );
 
+
 </script>
 
 </body>
 
 </html>
-```
