@@ -317,9 +317,79 @@
             📱 التسجيل في الرحلة
         </h2>
 
-        <p>
-            للتسجيل وإكمال الحجز،
-            يمكنك استخدام تطبيق رحلات العمرة.
+        <p>```html
+<p>
+    يمكنك التسجيل في الرحلة مباشرة من هذه الصفحة.
+</p>
+
+<div style="margin-top: 18px;">
+
+    <label style="display:block; margin-bottom:6px; font-weight:bold;">
+        الاسم الكامل
+    </label>
+
+    <input
+        id="pilgrimName"
+        type="text"
+        placeholder="اكتب الاسم الكامل"
+        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
+    >
+
+    <label style="display:block; margin-bottom:6px; font-weight:bold;">
+        رقم الجوال
+    </label>
+
+    <input
+        id="pilgrimPhone"
+        type="tel"
+        placeholder="05xxxxxxxx"
+        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
+    >
+
+    <label style="display:block; margin-bottom:6px; font-weight:bold;">
+        نوع الغرفة
+    </label>
+
+    <select
+        id="roomType"
+        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
+    >
+        <option value="SINGLE">مفردة</option>
+        <option value="DOUBLE" selected>مزدوجة</option>
+        <option value="TRIPLE">ثلاثية</option>
+        <option value="QUAD">رباعية</option>
+    </select>
+
+    <label style="display:block; margin-bottom:6px; font-weight:bold;">
+        عدد المعتمرين
+    </label>
+
+    <input
+        id="pilgrimCount"
+        type="number"
+        min="1"
+        value="1"
+        style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; font-size:16px; margin-bottom:14px;"
+    >
+
+</div>
+
+<button
+    id="webBookingButton"
+    class="button primary"
+    type="button"
+>
+    تسجيل في الرحلة
+</button>
+
+<div
+    id="bookingMessage"
+    class="message"
+    style="display:none;"
+>
+</div>
+```
+.
         </p>
 
 
