@@ -163,6 +163,18 @@
             border-color: #087f5b;
         }
 
+        .total-box {
+            background: #e6f7f1;
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 5px;
+            margin-bottom: 14px;
+            text-align: center;
+            color: #087f5b;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
     </style>
 
 </head>
@@ -207,7 +219,6 @@
 
         </div>
 
-
         <div class="info">
 
             <span class="label">
@@ -220,7 +231,6 @@
             </span>
 
         </div>
-
 
         <div class="info">
 
@@ -235,7 +245,6 @@
 
         </div>
 
-
         <div class="info">
 
             <span class="label">
@@ -248,7 +257,6 @@
             </span>
 
         </div>
-
 
         <div class="info">
 
@@ -287,7 +295,6 @@
 
         </div>
 
-
         <div class="info">
 
             <span>
@@ -301,7 +308,6 @@
 
         </div>
 
-
         <div class="info">
 
             <span>
@@ -314,7 +320,6 @@
             </span>
 
         </div>
-
 
         <div class="info">
 
@@ -345,142 +350,146 @@
         </p>
 
 
-        <div style="margin-top: 18px;">
+        <!-- الاسم -->
+
+        <label class="form-label">
+            الاسم الكامل
+        </label>
+
+        <input
+            id="pilgrimName"
+            class="form-input"
+            type="text"
+            placeholder="اكتب الاسم الكامل"
+            autocomplete="name"
+        >
 
 
-            <!-- الاسم -->
+        <!-- الجوال -->
 
-            <label class="form-label">
-                الاسم الكامل
-            </label>
+        <label class="form-label">
+            رقم الجوال
+        </label>
 
-            <input
-                id="pilgrimName"
-                class="form-input"
-                type="text"
-                placeholder="اكتب الاسم الكامل"
-                autocomplete="name"
-            >
-
-
-            <!-- الجوال -->
-
-            <label class="form-label">
-                رقم الجوال
-            </label>
-
-            <input
-                id="pilgrimPhone"
-                class="form-input"
-                type="tel"
-                placeholder="05xxxxxxxx"
-                autocomplete="tel"
-            >
+        <input
+            id="pilgrimPhone"
+            class="form-input"
+            type="tel"
+            placeholder="05xxxxxxxx"
+            autocomplete="tel"
+        >
 
 
-            <!-- رقم الهوية -->
+        <!-- رقم الهوية -->
 
-            <label class="form-label">
-                رقم الهوية
-            </label>
+        <label class="form-label">
+            رقم الهوية
+        </label>
 
-            <input
-                id="nationalId"
-                class="form-input"
-                type="text"
-                placeholder="اكتب رقم الهوية"
-                inputmode="numeric"
-            >
-
-
-            <!-- الجنس -->
-
-            <label class="form-label">
-                الجنس
-            </label>
-
-            <select
-                id="gender"
-                class="form-select"
-            >
-
-                <option value="">
-                    اختر الجنس
-                </option>
-
-                <option value="MALE">
-                    ذكر
-                </option>
-
-                <option value="FEMALE">
-                    أنثى
-                </option>
-
-            </select>
+        <input
+            id="nationalId"
+            class="form-input"
+            type="text"
+            placeholder="اكتب رقم الهوية"
+            inputmode="numeric"
+        >
 
 
-            <!-- نوع الغرفة -->
+        <!-- الجنس -->
 
-            <label class="form-label">
-                نوع الغرفة
-            </label>
+        <label class="form-label">
+            الجنس
+        </label>
 
-            <select
-                id="roomType"
-                class="form-select"
-            >
+        <select
+            id="gender"
+            class="form-select"
+        >
 
-                <option value="SINGLE">
-                    مفردة
-                </option>
+            <option value="">
+                اختر الجنس
+            </option>
 
-                <option value="DOUBLE"
-                        selected>
-                    مزدوجة
-                </option>
+            <option value="MALE">
+                ذكر
+            </option>
 
-                <option value="TRIPLE">
-                    ثلاثية
-                </option>
+            <option value="FEMALE">
+                أنثى
+            </option>
 
-                <option value="QUAD">
-                    رباعية
-                </option>
-
-            </select>
+        </select>
 
 
-            <!-- عدد المعتمرين -->
+        <!-- نوع الغرفة -->
 
-            <label class="form-label">
-                عدد المعتمرين
-            </label>
+        <label class="form-label">
+            نوع الغرفة
+        </label>
 
-            <input
-                id="pilgrimCount"
-                class="form-input"
-                type="number"
-                min="1"
-                value="1"
-                inputmode="numeric"
-            >
+        <select
+            id="roomType"
+            class="form-select"
+        >
+
+            <option value="SINGLE">
+                مفردة - 1,850 ريال
+            </option>
+
+            <option value="DOUBLE"
+                    selected>
+                مزدوجة - 1,350 ريال
+            </option>
+
+            <option value="TRIPLE">
+                ثلاثية - 1,100 ريال
+            </option>
+
+            <option value="QUAD">
+                رباعية - 950 ريال
+            </option>
+
+        </select>
 
 
-            <!-- الملاحظات -->
+        <!-- عدد المعتمرين -->
 
-            <label class="form-label">
-                ملاحظات
-            </label>
+        <label class="form-label">
+            عدد المعتمرين
+        </label>
 
-            <textarea
-                id="notes"
-                class="form-input"
-                placeholder="أي ملاحظات إضافية"
-                rows="3"
-                style="resize:vertical;"
-            ></textarea>
+        <input
+            id="pilgrimCount"
+            class="form-input"
+            type="number"
+            min="1"
+            value="1"
+            inputmode="numeric"
+        >
 
 
+        <!-- الملاحظات -->
+
+        <label class="form-label">
+            ملاحظات
+        </label>
+
+        <textarea
+            id="notes"
+            class="form-input"
+            placeholder="أي ملاحظات إضافية"
+            rows="3"
+            style="resize:vertical;"
+        ></textarea>
+
+
+        <!-- الإجمالي -->
+
+        <div
+            id="totalBox"
+            class="total-box"
+        >
+            الإجمالي: 1,350 ريال
         </div>
 
 
@@ -558,7 +567,70 @@
 </div>
 
 
-<script>
+<!-- =================================================
+     Firebase
+     ================================================= -->
+
+<script type="module">
+
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+    import {
+        getFirestore,
+        collection,
+        doc,
+        setDoc,
+        serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+
+    /*
+    =================================================
+    إعداد Firebase Web
+    =================================================
+    */
+
+    const firebaseConfig = {
+
+        apiKey:
+            "AIzaSyDfEUjWTwaUXS1p2fceWFSGKgY1nslpuZg",
+
+        authDomain:
+            "umrah-trips.firebaseapp.com",
+
+        projectId:
+            "umrah-trips",
+
+        storageBucket:
+            "umrah-trips.firebasestorage.app",
+
+        messagingSenderId:
+            "1051613189256",
+
+        appId:
+            "1:1051613189256:web:51a165f9dfde797afb7b3d"
+
+    };
+
+
+    /*
+    =================================================
+    تشغيل Firebase
+    =================================================
+    */
+
+    const firebaseApp =
+        initializeApp(
+            firebaseConfig
+        );
+
+
+    const db =
+        getFirestore(
+            firebaseApp
+        );
 
 
     /*
@@ -577,20 +649,13 @@
         urlParams.get("trip");
 
 
-    /*
-    إذا لم نجد الرقم في ?trip=
-    نبحث عنه في مسار الرابط
-    */
-
     if (!slug) {
 
         const path =
             window.location.pathname;
 
-
         const prefix =
             "/trip/";
-
 
         if (path.startsWith(prefix)) {
 
@@ -604,10 +669,6 @@
     }
 
 
-    /*
-    الرحلة الافتراضية
-    */
-
     if (!slug) {
 
         slug =
@@ -615,10 +676,6 @@
 
     }
 
-
-    /*
-    تنظيف رقم الرحلة
-    */
 
     slug =
         slug.trim();
@@ -652,17 +709,21 @@
             hotel:
                 "Mövenpick Abraj Al Bait",
 
-            single:
-                "1,850 ريال",
+            prices: {
 
-            double:
-                "1,350 ريال",
+                SINGLE:
+                    1850,
 
-            triple:
-                "1,100 ريال",
+                DOUBLE:
+                    1350,
 
-            quad:
-                "950 ريال"
+                TRIPLE:
+                    1100,
+
+                QUAD:
+                    950
+
+            }
 
         }
 
@@ -726,25 +787,29 @@
         document.getElementById(
             "single"
         ).textContent =
-            trip.single;
+            trip.prices.SINGLE.toLocaleString("en-US")
+            + " ريال";
 
 
         document.getElementById(
             "double"
         ).textContent =
-            trip.double;
+            trip.prices.DOUBLE.toLocaleString("en-US")
+            + " ريال";
 
 
         document.getElementById(
             "triple"
         ).textContent =
-            trip.triple;
+            trip.prices.TRIPLE.toLocaleString("en-US")
+            + " ريال";
 
 
         document.getElementById(
             "quad"
         ).textContent =
-            trip.quad;
+            trip.prices.QUAD.toLocaleString("en-US")
+            + " ريال";
 
 
         document.getElementById(
@@ -757,35 +822,7 @@
 
     /*
     =================================================
-    الرحلة غير موجودة
-    =================================================
-    */
-
-    else {
-
-        document.getElementById(
-            "tripTitle"
-        ).textContent =
-            "الرحلة غير موجودة";
-
-
-        document.getElementById(
-            "tripSlug"
-        ).textContent =
-            slug;
-
-
-        document.getElementById(
-            "appButton"
-        ).style.display =
-            "none";
-
-    }
-
-
-    /*
-    =================================================
-    رابط صفحة الويب
+    رابط صفحة الرحلة
     =================================================
     */
 
@@ -807,7 +844,7 @@
 
     /*
     =================================================
-    رابط Intent الخاص بـ Android
+    رابط Android Intent
     =================================================
     */
 
@@ -822,6 +859,444 @@
 
     /*
     =================================================
+    حساب الإجمالي
+    =================================================
+    */
+
+    const roomType =
+        document.getElementById(
+            "roomType"
+        );
+
+
+    const pilgrimCount =
+        document.getElementById(
+            "pilgrimCount"
+        );
+
+
+    const totalBox =
+        document.getElementById(
+            "totalBox"
+        );
+
+
+    function updateTotal() {
+
+        if (!trip) {
+            return;
+        }
+
+
+        const selectedRoom =
+            roomType.value;
+
+
+        let count =
+            parseInt(
+                pilgrimCount.value,
+                10
+            );
+
+
+        if (
+            isNaN(count) ||
+            count < 1
+        ) {
+
+            count = 1;
+
+        }
+
+
+        const unitPrice =
+            trip.prices[selectedRoom];
+
+
+        const totalPrice =
+            unitPrice * count;
+
+
+        totalBox.textContent =
+            "الإجمالي: "
+            + totalPrice.toLocaleString("en-US")
+            + " ريال";
+
+    }
+
+
+    roomType.addEventListener(
+        "change",
+        updateTotal
+    );
+
+
+    pilgrimCount.addEventListener(
+        "input",
+        updateTotal
+    );
+
+
+    updateTotal();
+
+
+    /*
+    =================================================
+    زر التسجيل في Firestore
+    =================================================
+    */
+
+    const webBookingButton =
+        document.getElementById(
+            "webBookingButton"
+        );
+
+
+    const bookingMessage =
+        document.getElementById(
+            "bookingMessage"
+        );
+
+
+    webBookingButton.addEventListener(
+        "click",
+        async function() {
+
+
+            /*
+            -----------------------------------------
+            قراءة البيانات
+            -----------------------------------------
+            */
+
+            const pilgrimName =
+                document.getElementById(
+                    "pilgrimName"
+                ).value.trim();
+
+
+            const phone =
+                document.getElementById(
+                    "pilgrimPhone"
+                ).value.trim();
+
+
+            const nationalId =
+                document.getElementById(
+                    "nationalId"
+                ).value.trim();
+
+
+            const gender =
+                document.getElementById(
+                    "gender"
+                ).value;
+
+
+            const selectedRoom =
+                roomType.value;
+
+
+            let count =
+                parseInt(
+                    pilgrimCount.value,
+                    10
+                );
+
+
+            const notes =
+                document.getElementById(
+                    "notes"
+                ).value.trim();
+
+
+            /*
+            -----------------------------------------
+            التحقق
+            -----------------------------------------
+            */
+
+            if (!pilgrimName) {
+
+                alert(
+                    "يرجى كتابة الاسم الكامل"
+                );
+
+                return;
+
+            }
+
+
+            if (!phone) {
+
+                alert(
+                    "يرجى كتابة رقم الجوال"
+                );
+
+                return;
+
+            }
+
+
+            if (!nationalId) {
+
+                alert(
+                    "يرجى كتابة رقم الهوية"
+                );
+
+                return;
+
+            }
+
+
+            if (!gender) {
+
+                alert(
+                    "يرجى اختيار الجنس"
+                );
+
+                return;
+
+            }
+
+
+            if (
+                isNaN(count) ||
+                count < 1
+            ) {
+
+                alert(
+                    "يرجى إدخال عدد صحيح للمعتمرين"
+                );
+
+                return;
+
+            }
+
+
+            if (!trip) {
+
+                alert(
+                    "الرحلة غير موجودة"
+                );
+
+                return;
+
+            }
+
+
+            /*
+            -----------------------------------------
+            منع الضغط المتكرر
+            -----------------------------------------
+            */
+
+            webBookingButton.disabled =
+                true;
+
+
+            webBookingButton.textContent =
+                "جاري تسجيل الحجز...";
+
+
+            bookingMessage.style.display =
+                "none";
+
+
+            try {
+
+
+                /*
+                -------------------------------------
+                السعر
+                -------------------------------------
+                */
+
+                const unitPrice =
+                    trip.prices[selectedRoom];
+
+
+                const totalPrice =
+                    unitPrice * count;
+
+
+                /*
+                -------------------------------------
+                رقم الحجز
+                -------------------------------------
+                */
+
+                const randomPart =
+                    crypto.randomUUID()
+                    .replace(/-/g, "")
+                    .substring(0, 8)
+                    .toUpperCase();
+
+
+                const bookingId =
+                    "UMR-" + randomPart;
+
+
+                /*
+                -------------------------------------
+                تاريخ التسجيل
+                -------------------------------------
+                */
+
+                const registeredAt =
+                    new Date().toLocaleString(
+                        "ar-SA",
+                        {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        }
+                    );
+
+
+                /*
+                -------------------------------------
+                بيانات الحجز
+                -------------------------------------
+                */
+
+                const bookingData = {
+
+                    id:
+                        bookingId,
+
+                    tripId:
+                        slug,
+
+                    pilgrimName:
+                        pilgrimName,
+
+                    phone:
+                        phone,
+
+                    nationalId:
+                        nationalId,
+
+                    gender:
+                        gender,
+
+                    roomType:
+                        selectedRoom,
+
+                    pilgrimCount:
+                        count,
+
+                    unitPrice:
+                        unitPrice,
+
+                    totalPrice:
+                        totalPrice,
+
+                    status:
+                        "PENDING_PAYMENT",
+
+                    registeredAt:
+                        registeredAt,
+
+                    notes:
+                        notes
+
+                };
+
+
+                /*
+                -------------------------------------
+                الحفظ في Firestore
+                -------------------------------------
+                */
+
+                await setDoc(
+
+                    doc(
+                        collection(
+                            db,
+                            "bookings"
+                        ),
+                        bookingId
+                    ),
+
+                    bookingData
+
+                );
+
+
+                /*
+                -------------------------------------
+                نجاح التسجيل
+                -------------------------------------
+                */
+
+                bookingMessage.style.display =
+                    "block";
+
+
+                bookingMessage.textContent =
+                    "تم تسجيلك في الرحلة بنجاح. رقم الحجز: "
+                    + bookingId;
+
+
+                bookingMessage.style.background =
+                    "#e6f7f1";
+
+
+                bookingMessage.style.color =
+                    "#087f5b";
+
+
+                webBookingButton.textContent =
+                    "تم التسجيل بنجاح";
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Firestore booking error:",
+                    error
+                );
+
+
+                bookingMessage.style.display =
+                    "block";
+
+
+                bookingMessage.textContent =
+                    "حدث خطأ أثناء التسجيل. حاول مرة أخرى.";
+
+
+                bookingMessage.style.background =
+                    "#f1f3f5";
+
+
+                bookingMessage.style.color =
+                    "#b42318";
+
+
+                webBookingButton.disabled =
+                    false;
+
+
+                webBookingButton.textContent =
+                    "تسجيل في الرحلة";
+
+            }
+
+        }
+    );
+
+
+    /*
+    =================================================
     زر فتح التطبيق
     =================================================
     */
@@ -832,47 +1307,22 @@
         );
 
 
-    /*
-    تحديد نوع الجهاز
-    */
-
     const userAgent =
         navigator.userAgent ||
         navigator.vendor ||
         window.opera;
 
 
-    /*
-    Android
-    */
-
-    if (/android/i.test(userAgent)) {
-
-        appButton.textContent =
-            "فتح تطبيق رحلات العمرة";
-
-    }
-
-
-    /*
-    iPhone / iPad
-    */
-
-    else if (
-        /iPhone|iPad|iPod/i.test(
+    if (
+        /android/i.test(
             userAgent
         )
     ) {
 
         appButton.textContent =
-            "استخدام صفحة الرحلة";
+            "فتح تطبيق رحلات العمرة";
 
     }
-
-
-    /*
-    الكمبيوتر والأجهزة الأخرى
-    */
 
     else {
 
@@ -881,12 +1331,6 @@
 
     }
 
-
-    /*
-    =================================================
-    الضغط على زر التطبيق
-    =================================================
-    */
 
     appButton.addEventListener(
         "click",
@@ -933,26 +1377,7 @@
 
 
             /*
-            iPhone / iPad
-            */
-
-            if (
-                /iPhone|iPad|iPod/i.test(
-                    currentUserAgent
-                )
-            ) {
-
-                window.location.href =
-                    tripUrl;
-
-
-                return;
-
-            }
-
-
-            /*
-            الكمبيوتر والأجهزة الأخرى
+            iPhone / الكمبيوتر
             */
 
             window.location.href =
@@ -983,10 +1408,6 @@
 
             try {
 
-                /*
-                إذا كان الجهاز يدعم المشاركة
-                */
-
                 if (
                     navigator.share
                 ) {
@@ -1008,11 +1429,6 @@
 
                 }
 
-
-                /*
-                إذا لم يدعم المشاركة
-                */
-
                 else {
 
                     await navigator.clipboard.writeText(
@@ -1028,7 +1444,6 @@
 
             }
 
-
             catch (error) {
 
                 try {
@@ -1043,7 +1458,6 @@
                     );
 
                 }
-
 
                 catch (copyError) {
 
