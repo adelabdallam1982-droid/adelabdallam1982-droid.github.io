@@ -872,6 +872,27 @@ catch (error) {
             "tripSlug"
         ).textContent =
             slug;
+        const roomType = document.getElementById("roomType");
+
+roomType.options[0].textContent =
+    "مفردة - " +
+    trip.prices.SINGLE.toLocaleString("en-US") +
+    " ريال";
+
+roomType.options[1].textContent =
+    "مزدوجة - " +
+    trip.prices.DOUBLE.toLocaleString("en-US") +
+    " ريال";
+
+roomType.options[2].textContent =
+    "ثلاثية - " +
+    trip.prices.TRIPLE.toLocaleString("en-US") +
+    " ريال";
+
+roomType.options[3].textContent =
+    "رباعية - " +
+    trip.prices.QUAD.toLocaleString("en-US") +
+    " ريال";
 
     }
 
