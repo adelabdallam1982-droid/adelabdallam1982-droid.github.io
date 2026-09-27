@@ -577,14 +577,13 @@
         initializeApp
     } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
 
-    import {
-        getFirestore,
-        collection,
-        doc,
-        setDoc,
-        serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-
+   import {
+    getFirestore,
+    collection,
+    doc,
+    setDoc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
 
     /*
     =================================================
@@ -687,60 +686,115 @@
     =================================================
     */
 
-    const trips = {
+   /*
+=================================================
+قراءة بيانات الرحلة من Firestore
+=================================================
+*/
 
-        "riyadh-fall2026": {
+let trip = null;
+
+try {
+
+    const tripRef =
+        doc(
+            db,
+            "trips",
+            slug
+        );
+
+    const tripSnapshot =
+        await getDoc(
+            tripRef
+        );
+
+    if (
+        tripSnapshot.exists()
+    ) {
+
+        const data =
+            tripSnapshot.data();
+
+        const pricing =
+            data.roomPricing || {};
+
+        trip = {
+
+            id:
+                data.id || slug,
 
             title:
-                "رحلة عمرة – الرياض",
+                data.title || "رحلة عمرة",
 
             departureDate:
-                "15 سبتمبر 2026",
+                data.departureDateAr || "-",
 
             returnDate:
-                "19 سبتمبر 2026",
+                data.returnDateAr || "-",
 
             meeting:
-                "محطة قطار الرياض",
+                data.gatheringLocation?.pointName
+                || data.gatheringLocation?.addressDetails
+                || "-",
 
             bus:
-                "حافلة VIP",
+                data.busDetails?.modelName
+                || data.busDetails?.busNumber
+                || "-",
 
             hotel:
-                "Mövenpick Abraj Al Bait",
+                data.hotelDetails?.name
+                || "-",
 
             prices: {
 
                 SINGLE:
-                    1850,
+                    Number(
+                        pricing.singlePrice || 0
+                    ),
 
                 DOUBLE:
-                    1350,
+                    Number(
+                        pricing.doublePrice || 0
+                    ),
 
                 TRIPLE:
-                    1100,
+                    Number(
+                        pricing.triplePrice || 0
+                    ),
 
                 QUAD:
-                    950
+                    Number(
+                        pricing.quadPrice || 0
+                    )
 
             }
 
-        }
+        };
 
-    };
+    }
 
+    else {
 
-    /*
-    =================================================
-    البحث عن الرحلة
-    =================================================
-    */
+        console.error(
+            "الرحلة غير موجودة في Firestore:",
+            slug
+        );
 
-    const trip =
-        trips[slug];
+    }
 
+}
 
-    /*
+catch (error) {
+
+    console.error(
+        "خطأ في تحميل الرحلة من Firestore:",
+        error
+    );
+
+}
+
+   
     =================================================
     عرض بيانات الرحلة
     =================================================
